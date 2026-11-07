@@ -13,7 +13,7 @@ public class MenuView {
 
     public void exibirMenu() {
 
-        int opcao;
+        String opcao;
 
         do {
             System.out.println("\n========== CINETRACK ==========");
@@ -28,39 +28,38 @@ public class MenuView {
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
 
-            opcao = scanner.nextInt();
-            scanner.nextLine();
+            opcao = scanner.nextLine();
 
             switch (opcao) {
-                case 1:
+                case "1":
                     cadastrarFilme();
                     break;
-                case 2:
+                case "2":
                     listarFilmes();
                     break;
-                case 3:
+                case "3":
                     atualizarFilme();
                     break;
-                case 4:
+                case "4":
                     excluirFilme();
                     break;
-                case 5:
+                case "5":
                     pesquisarFilmePorTitulo();
                     break;
-                case 6:
+                case "6":
                     pesquisarFilmePorGenero();
                     break;
-                case 7:
+                case "7":
                     pesquisarFilmePorAno();
                     break;
-                case 0:
+                case "0":
                     System.out.println("Programa encerrado.");
                     break;
                 default:
                     System.out.println("Opção inválida!");
             }
 
-        } while (opcao != 0);
+        } while (!opcao.equals("0"));
     }
 
     private void cadastrarFilme() {
@@ -109,7 +108,7 @@ public class MenuView {
         }
 
         for (Filme filme : filmes) {
-            System.out.println("----------------------------");
+            System.out.println("-------------------------------------------");
             System.out.println("Título: " + filme.getTitulo());
             System.out.println("Gênero: " + filme.getGenero());
             System.out.println("Ano: " + filme.getAno());
@@ -190,7 +189,7 @@ public class MenuView {
         }
 
         for (Filme filme : filmes) {
-            System.out.println("----------------------------");
+            System.out.println("-------------------------------------------");
             System.out.println("Título: " + filme.getTitulo());
             System.out.println("Gênero: " + filme.getGenero());
             System.out.println("Ano: " + filme.getAno());
@@ -215,7 +214,7 @@ public class MenuView {
         }
 
         for (Filme filme : filmes) {
-            System.out.println("----------------------------");
+            System.out.println("-------------------------------------------");
             System.out.println("Título: " + filme.getTitulo());
             System.out.println("Gênero: " + filme.getGenero());
             System.out.println("Ano: " + filme.getAno());
@@ -241,7 +240,7 @@ public class MenuView {
         }
 
         for (Filme filme : filmes) {
-            System.out.println("----------------------------");
+            System.out.println("-------------------------------------------");
             System.out.println("Título: " + filme.getTitulo());
             System.out.println("Gênero: " + filme.getGenero());
             System.out.println("Ano: " + filme.getAno());
