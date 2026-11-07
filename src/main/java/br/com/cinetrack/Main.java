@@ -1,6 +1,7 @@
 package br.com.cinetrack;
 
 import br.com.cinetrack.util.RavenDBUtil;
+import br.com.cinetrack.view.MenuView;
 
 public class Main {
 
