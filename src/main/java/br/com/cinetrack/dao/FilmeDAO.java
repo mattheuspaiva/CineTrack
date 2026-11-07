@@ -1,5 +1,6 @@
 package br.com.cinetrack.dao;
 
+import br.com.cinetrack.model.Filme;
 import br.com.cinetrack.util.RavenDBUtil;
 
 import net.ravendb.client.documents.session.IDocumentSession;
