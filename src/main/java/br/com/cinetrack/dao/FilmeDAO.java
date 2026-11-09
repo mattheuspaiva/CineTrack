@@ -12,8 +12,7 @@ public class FilmeDAO {
 
     public String cadastrar(Filme filme) {
 
-        try (IDocumentSession sessao =
-                     RavenDBUtil.getStore().openSession()) {
+        try (IDocumentSession sessao = RavenDBUtil.getStore().openSession()) {
 
             sessao.store(filme);
             sessao.saveChanges();
@@ -24,8 +23,7 @@ public class FilmeDAO {
 
     public List<Filme> listarTodos() {
 
-        try (IDocumentSession sessao =
-                     RavenDBUtil.getStore().openSession()) {
+        try (IDocumentSession sessao = RavenDBUtil.getStore().openSession()) {
 
             return sessao.query(Filme.class)
                     .toList();
@@ -34,8 +32,7 @@ public class FilmeDAO {
 
     public boolean atualizar(String id, Filme filmeAtualizado) {
 
-        try (IDocumentSession sessao =
-                     RavenDBUtil.getStore().openSession()) {
+        try (IDocumentSession sessao = RavenDBUtil.getStore().openSession()) {
 
             Filme filme = sessao.load(Filme.class, id);
 
@@ -58,8 +55,7 @@ public class FilmeDAO {
 
     public boolean excluir(String id) {
 
-        try (IDocumentSession sessao =
-                     RavenDBUtil.getStore().openSession()) {
+        try (IDocumentSession sessao = RavenDBUtil.getStore().openSession()) {
 
             Filme filme = sessao.load(Filme.class, id);
 
@@ -76,8 +72,7 @@ public class FilmeDAO {
 
     public List<Filme> pesquisarPorTitulo(String titulo) {
 
-        try (IDocumentSession sessao =
-                     RavenDBUtil.getStore().openSession()) {
+        try (IDocumentSession sessao = RavenDBUtil.getStore().openSession()) {
 
             return sessao.query(Filme.class)
                     .whereStartsWith("titulo", titulo)
@@ -87,8 +82,7 @@ public class FilmeDAO {
 
     public List<Filme> pesquisarPorGenero(String genero) {
 
-        try (IDocumentSession sessao =
-                     RavenDBUtil.getStore().openSession()) {
+        try (IDocumentSession sessao = RavenDBUtil.getStore().openSession()) {
 
             return sessao.query(Filme.class)
                     .whereEquals("genero", genero)
@@ -98,8 +92,7 @@ public class FilmeDAO {
 
     public List<Filme> pesquisarPorAno(int ano) {
 
-        try (IDocumentSession sessao =
-                     RavenDBUtil.getStore().openSession()) {
+        try (IDocumentSession sessao = RavenDBUtil.getStore().openSession()) {
 
             return sessao.query(Filme.class)
                     .whereEquals("ano", ano)
